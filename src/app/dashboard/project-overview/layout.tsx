@@ -13,7 +13,7 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="min-h-screen bg-gray-100">
-      <header className="flex justify-between items-center p-4 bg-blue-600 text-white">
+      <header className="fixed top-0 left-0 flex w-full justify-between items-center p-4 bg-blue-600 text-white z-10">
         <h1 className="text-2xl font-bold">Car SW Lifecycle Dashboard</h1>
         <div className="flex items-center space-x-4">
           <Button variant="ghost" size="icon">
@@ -29,8 +29,8 @@ export default function DashboardLayout({
         </div>
       </header>
 
-      <div className="flex">
-        <aside className="w-64 h-screen bg-white p-4">
+      <div className="flex pt-16">
+        <aside className="fixed left-0 top-16  w-64 h-[calc(100vh-4rem)] bg-white p-4 overflow-y-auto">
           <nav>
             <ul className="space-y-2">
               <li><Link href="/dashboard/recharts" className="block py-2 px-4 rounded hover:bg-blue-500 hover:text-white">Recharts Dashboard</Link></li>
@@ -44,7 +44,7 @@ export default function DashboardLayout({
           </nav>
         </aside>
 
-        <main className="flex-1 p-8">
+        <main className="ml-64 flex-1 p-8">
           {children}
         </main>
       </div>
